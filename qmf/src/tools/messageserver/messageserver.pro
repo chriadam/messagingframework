@@ -46,6 +46,12 @@ SOURCES += mailmessageclient.cpp \
            prepareaccounts.cpp \
            newcountnotifier.cpp \
            servicehandler.cpp
+
+contains(DEFINES,MESSAGESERVER_PLUGINS) {
+    HEADERS += messageserverplugins.h
+    SOURCES += messageserverplugins.cpp
+}
+
 !SERVER_AS_DLL: {
     SOURCES += main.cpp
 }
